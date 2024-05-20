@@ -1,8 +1,6 @@
 name: Share data between jobs with C++1
 on: [push]
 jobs:
- job2:
-    needs: job1
     runs-on: windows-latest
     steps:
     - name: Checkout
