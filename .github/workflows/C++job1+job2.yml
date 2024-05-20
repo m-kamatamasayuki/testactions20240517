@@ -11,14 +11,14 @@ jobs:
         dir project\main
         cd project\main
         g++ -o main-test2.exe main-test.cpp
-        .\main-test2.exe > output.txt
-        .\output.txt
+        .\main-test2.exe > outline.txt
+        .\outline.txt
       shell: cmd
     - name: Upload output
       uses: actions/upload-artifact@v4
       with:
-        name: output
-        path: project\main\output.txt
+        name: outline
+        path: project\main\outline.txt
 
   job2:
     needs: job1
@@ -26,18 +26,17 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4
-    - name: Download output
+    - name: Download outline
       uses: actions/download-artifact@v4
       with:
-        name: output
-        path: project\main\output.txt
+        name: outline
+        path: project\main\outline.txt
     - name: Run another C++ code
       run: |
          dir project\main
          cd project\main
          g++ -o Untitled-1 Untitled-1.cpp
-         .\Untitled-1.exe > output2.txt
-         .\output2.txt
+         .\Untitled-1.exe outline.txt
       shell: cmd
 
   job_3:
