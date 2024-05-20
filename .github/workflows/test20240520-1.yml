@@ -1,12 +1,16 @@
-name: Share data between jobs with C++1
-on: [push]
+name: Run EXE
+on: [push]  
 jobs:
-runs-on: windows-latest
-    - uses: actions/checkout@v4
-    - name: Run another C++ code
+ job1:
+   build:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2   
+    - name: Run1 EXE
       run: |
+        msbuild -version
          dir project\main
          cd project\main
-         g++ -o Untitled-1 Untitled-1.cpp 
+         g++ -o Untitled-1 Untitled-1.cpp
          .\Untitled-1.exe output.txt
       shell: cmd
