@@ -4,10 +4,9 @@ jobs:
    build:
     runs-on: windows-latest
     steps:
-    - uses: actions/checkout@v2   
+    - uses: actions/checkout@v2
     - name: Run1 EXE
       run: |
-#        msbuild -version
          dir project\main
          cd project\main
          g++ -o test_20240520 test_20240520.cpp
