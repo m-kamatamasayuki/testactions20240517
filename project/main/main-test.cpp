@@ -1,7 +1,7 @@
 #include <iostream>
 
 int main() {
-    int number = 3;
+    int number = 2;
     int square = number * number;
     std::cout << square << std::endl;
     return 0;
