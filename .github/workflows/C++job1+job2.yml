@@ -1,0 +1,46 @@
+name: Share data between jobs with C++
+on: [push]
+jobs:
+  job1:
+    runs-on: windows-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Run C++ code
+      run: |
+        dir project\main
+        cd project\main
+        g++ -o main-test2.exe main-test.cpp
+        main-test2.exe > output.txt
+        main-test2.exe 
+      shell: cmd
+    - name: Upload output
+      uses: actions/upload-artifact@v4
+      with:
+        name: output
+        path: project\main\output.txt
+
+  job2:
+    needs: job1
+    runs-on: windows-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Download output
+      uses: actions/download-artifact@v4
+      with:
+        name: output
+        path: project\main\output
+    - name: Run another C++ code
+      run: |
+         dir project\main
+         cd project\main
+         g++ -o Untitled-1 Untitled-1.cpp
+         .\Untitled-1.exe output.txt > outtest.txt        
+         outtest.txt
+      shell: cmd
+#    - name: Upload outtest
+#      uses: actions/upload-artifact@v4
+#      with:
+#        name: outtest
+#        path: project\main\outtest
