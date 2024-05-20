@@ -38,3 +38,12 @@ jobs:
          g++ -o Untitled-1 Untitled-1.cpp
          .\Untitled-1.exe output.txt
       shell: cmd
+
+  job_3:
+    name: job 3
+    needs: job2
+    runs-on: ubuntu-latest
+    steps:
+      - name: job 3 step 1
+        run: |
+          echo "job 3 step 1"
