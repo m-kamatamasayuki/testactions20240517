@@ -1,12 +1,9 @@
 name: Share data between jobs with C++1
 on: [push]
 jobs:
-    runs-on: windows-latest
+runs-on: windows-latest
     steps:
-    - name: Checkout
       uses: actions/checkout@v4
-    - name: Download output
-      uses: actions/download-artifact@v4
     - name: Run another C++ code
       run: |
          dir project\main
