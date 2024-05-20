@@ -39,8 +39,3 @@ jobs:
          .\Untitled-1.exe output.txt > outtest.txt        
          outtest.txt
       shell: cmd
-#    - name: Upload outtest
-#      uses: actions/upload-artifact@v4
-#      with:
-#        name: outtest
-#        path: project\main\outtest
