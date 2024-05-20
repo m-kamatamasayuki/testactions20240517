@@ -37,5 +37,5 @@ jobs:
          cd project\main
          g++ -o Untitled-1 Untitled-1.cpp
          .\Untitled-1.exe output.txt > project\main\outtest.txt
-         project\main\outtest.txt
+         outtest.txt
       shell: cmd
