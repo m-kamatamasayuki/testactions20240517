@@ -7,9 +7,9 @@ jobs:
     - uses: actions/checkout@v2   
     - name: Run1 EXE
       run: |
-        msbuild -version
+#        msbuild -version
          dir project\main
          cd project\main
          g++ -o test_20240520 test_20240520.cpp
-         .\test_20240520.exe output.txt
+         .\test_20240520.exe < output.txt
       shell: cmd
