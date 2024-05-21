@@ -9,7 +9,6 @@ jobs:
       run: |
          dir project\main
          cd project\main
-         g++ -o test_20240520 test_20240520.cpp
-         .\test_20240520.exe < output.txt > test22.txt
-         .\test22.txt
+         g++ -o Untitled-1 Untitled-1.cpp
+         .\Untitled-1.exe < output.txt
       shell: cmd
