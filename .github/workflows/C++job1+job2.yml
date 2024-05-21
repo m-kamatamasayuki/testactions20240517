@@ -35,8 +35,13 @@ jobs:
          dir project\main
          cd project\main
          g++ -o test_20240520 test_20240520.cpp
-         .\test_20240520.exe outline.txt
+         .\test_20240520.exe outline.txt > test.txt
       shell: cmd
+    - name: Upload output
+      uses: actions/upload-artifact@v4
+      with:
+        name: test
+        path: project\main\test.txt
 
   job_3:
     name: job 3
@@ -45,4 +50,8 @@ jobs:
     steps:
       - name: job 3 step 1
         run: |
-          echo "job 3 step 1"
+           dir project\main
+           cd project\main
+           .\test.txt
+           
+          
