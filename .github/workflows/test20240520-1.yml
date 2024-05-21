@@ -11,4 +11,5 @@ jobs:
          cd project\main
          g++ -o test_20240520 test_20240520.cpp
          .\test_20240520.exe < output.txt
+         output.txt
       shell: cmd
