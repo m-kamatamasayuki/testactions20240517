@@ -10,5 +10,5 @@ jobs:
          dir project\main
          cd project\main
          g++ -o main-test main-test.cpp
-         .\test_main-test.exe > testtest.txt
+         .\test_main-test.exe
       shell: cmd
