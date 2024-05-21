@@ -35,7 +35,7 @@ jobs:
          dir project\main
          cd project\main
          g++ -o Untitled-1 Untitled-1.cpp
-         .\Untitled-1.exe < outline.txt
+         .\Untitled-1.exe outline.txt
       shell: cmd
 
   job_3:
