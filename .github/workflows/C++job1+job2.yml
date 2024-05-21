@@ -12,6 +12,7 @@ jobs:
         cd project\main
         g++ -o main-test.exe main-test.cpp
         .\main-test.exe > outline.txt
+        type outline.txt
       shell: cmd
     - name: Upload output
       uses: actions/upload-artifact@v4
@@ -36,6 +37,7 @@ jobs:
          cd project\main
          g++ -o test_20240520 test_20240520.cpp
          .\test_20240520.exe outline.txt > test.txt
+         type test.txt
       shell: cmd
     - name: Upload output
       uses: actions/upload-artifact@v4
