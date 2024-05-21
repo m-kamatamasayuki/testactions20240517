@@ -9,6 +9,6 @@ jobs:
       run: |
          dir project\main
          cd project\main
-         g++ -o test_20240520 test_20240520.cpp
-         test_20240520.exe
+         g++ -o main-test main-test.cpp
+         test_main-test.exe
       shell: cmd
