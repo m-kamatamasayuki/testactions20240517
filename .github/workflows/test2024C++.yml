@@ -1,0 +1,128 @@
+name: Share data between jobs with C++
+on: [push]
+jobs:
+  job1:
+    runs-on: windows-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Run C++ code
+      run: |
+        dir project\main
+        cd project\main
+        g++ -o main-test.exe main-test.cpp
+        .\main-test.exe > outline.txt
+        type outline.txt
+      shell: cmd
+    - name: Upload output
+      uses: actions/upload-artifact@v4
+      with:
+        name: outline
+        path: project\main\outline.txt
+  job1-1:
+    runs-on: windows-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Run C++ code
+      run: |
+        dir project\main
+        cd project\main
+        g++ -o main-test.exe main-test.cpp
+        .\main-test.exe > outline1.txt
+        type outline1.txt
+      shell: cmd
+    - name: Upload output
+      uses: actions/upload-artifact@v4
+      with:
+        name: outline
+        path: project\main\outline1.txt
+  job2:
+    needs: job1
+    runs-on: windows-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Download outline
+      uses: actions/download-artifact@v4
+      with:
+        name: outline
+        path: project\main\outline.txt
+    - name: Run another C++ code
+      run: |
+         dir project\main
+         cd project\main
+         g++ -o test_20240520 test_20240520.cpp
+         .\test_20240520.exe outline.txt > test.txt
+         type test.txt
+      shell: cmd
+    - name: Upload output
+      uses: actions/upload-artifact@v4
+      with:
+        name: test
+        path: project\main\test.txt
+  job2-1:
+    needs: job1-1
+    runs-on: windows-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Download outline
+      uses: actions/download-artifact@v4
+      with:
+        name: outline1
+        path: project\main\outline1.txt
+    - name: Run another C++ code
+      run: |
+         dir project\main
+         cd project\main
+         g++ -o test_20240520 test_20240520.cpp
+         .\test_20240520.exe outline.txt > test2.txt
+         type test2.txt
+      shell: cmd
+    - name: Upload output
+      uses: actions/upload-artifact@v4
+      with:
+        name: test2
+        path: project\main\test2.txt
+  job_3:
+    name: job 3
+    needs: job2
+    runs-on:  windows-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Download test
+      uses: actions/download-artifact@v4
+      with:
+        name: test
+        path: project\main\test.txt
+    - name: Run another C++ code
+      run: |
+          dir project\main
+          cd project\main
+          g++ -o Untitled-1 Untitled-1.cpp
+          .\Untitled-1.exe test.txt > test22.txt
+          type test22.txt
+      shell: cmd
+
+  job_3-1:
+    name: job 3-1
+    needs: job2-1
+    runs-on:  windows-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Download test
+      uses: actions/download-artifact@v4
+      with:
+        name: test2
+        path: project\main\test2.txt
+    - name: Run another C++ code
+      run: |
+          dir project\main
+          cd project\main
+          g++ -o Untitled-1 Untitled-1.cpp
+          .\Untitled-1.exe test.txt > test23.txt
+          type test23.txt
+      shell: cmd
