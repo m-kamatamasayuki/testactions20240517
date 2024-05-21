@@ -57,5 +57,5 @@ jobs:
       run: |
           dir project\main
           cd project\main
-          .\test.txt
+          test.txt
       shell: cmd
