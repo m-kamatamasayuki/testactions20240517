@@ -48,10 +48,14 @@ jobs:
     needs: job2
     runs-on: ubuntu-latest
     steps:
-      - name: job 3 step 1
-        run: |
-           dir project\main
-           cd project\main
-           .\test.txt
-           
-          
+    - name: Download test
+      uses: actions/download-artifact@v4
+      with:
+        name: test
+        path: project\main\test.txt
+    - name: Run another C++ code
+      run: |
+          dir project\main
+          cd project\main
+          .\test.txt
+      shell: cmd
