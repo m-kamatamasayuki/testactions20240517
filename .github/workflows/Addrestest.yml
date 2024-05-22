@@ -12,12 +12,12 @@ jobs:
          cd project\main
          g++ -o address2024test address2024test.cpp
          .\address2024test.exe > input-address.txt
-         type address.txt
+         type input-address.txt
       shell: cmd
     - name: Upload outline
       uses: actions/upload-artifact@v4
       with:
-        name: address
+        name: input-address
         path: project\main\input-address.txt
   job2:
     needs: job1
