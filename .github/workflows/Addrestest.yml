@@ -14,3 +14,8 @@ jobs:
          .\address2024test.exe > address.txt
          type address.txt
       shell: cmd
+    - name: Upload outline
+      uses: actions/upload-artifact@v4
+      with:
+        name: address
+        path: project\main\address.txt
