@@ -43,3 +43,9 @@ jobs:
       with:
         name: output-address
         path: project\main\output-address.txt
+    - name: output-address
+      run: |
+         dir project\main
+         cd project\main
+         type output-address.txt
+      shell: cmd
