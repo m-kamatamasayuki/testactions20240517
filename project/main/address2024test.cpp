@@ -27,10 +27,10 @@ public:
 
 int main() {
     AddressBook addressBook;
-    addressBook.addPerson(Person("山田 太郎", "東京都新宿区"));
-    addressBook.addPerson(Person("佐藤 次郎", "神奈川県横浜市"));
-	addressBook.addPerson(Person("山田 花子", "神奈川県横浜市"));
-    addressBook.addPerson(Person("佐藤 花子", "神奈川県川崎市"));
+    addressBook.addPerson(Person("yamada tarou ", "tokyo-to sinjyuku-ku"));
+    addressBook.addPerson(Person("satou jirou", "kanagawa-ken yokohama-si"));
+	addressBook.addPerson(Person("yamada hanako", "tokyo-to sinjyuku-ku"));
+    addressBook.addPerson(Person("satou hanako", "kanagawa-ken sinjukyu-ku"));
 	addressBook.printAddressBook();
 
     return 0;
