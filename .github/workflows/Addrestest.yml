@@ -36,11 +36,6 @@ jobs:
          cd project\main
          g++ -o address2024test-in address2024test-in.cpp
          .\address2024test-in.exe input-address.txt > output-address.txt
-      shell: cmd
-    - name: Run
-      run: |
-         dir project\main
-         cd project\main
          type output-address.txt
       shell: cmd
     - name: Upload output
