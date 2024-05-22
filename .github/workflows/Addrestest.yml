@@ -1,0 +1,15 @@
+name: Run EXE
+on: [push]  
+jobs:
+   build:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run1 EXE
+      run: |
+         msbuild -version
+         dir project\main
+         cd project\main
+         g++ -o address2024test address2024test.cpp
+         address2024test.exe
+      shell: cmd
