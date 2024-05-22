@@ -28,7 +28,7 @@ jobs:
     - name: Download output
       uses: actions/download-artifact@v4
       with:
-        name: outline
+        name: address
         path: project\main\address.txt
     - name: Run another C++ code
       run: |
