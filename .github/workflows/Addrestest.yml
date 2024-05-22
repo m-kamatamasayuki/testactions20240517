@@ -32,6 +32,7 @@ jobs:
         path: project\main\input-address.txt
     - name: Run another C++ code
       run: |
+         msbuild -version
          dir project\main
          cd project\main
          g++ -o address2024test-in address2024test-in.cpp
