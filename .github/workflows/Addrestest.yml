@@ -11,6 +11,6 @@ jobs:
          dir project\main
          cd project\main
          g++ -o address2024test address2024test.cpp
-         .\address2024test.exe > print.txt
-         type print.txt
+         .\address2024test.exe > address.txt
+         type address.txt
       shell: cmd
