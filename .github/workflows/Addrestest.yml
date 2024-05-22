@@ -38,8 +38,8 @@ jobs:
          .\address2024test-in.exe address.txt > output-address.txt
          type output-address.txt
       shell: cmd
-    - name: Upload output
-      uses: actions/upload-artifact@v4
-      with:
-        name: output-address
-        path: project\main\output-address.txt
+ #   - name: Upload output
+ #     uses: actions/upload-artifact@v4
+ #     with:
+ #       name: output-address
+ #       path: project\main\output-address.txt
