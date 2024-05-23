@@ -55,8 +55,8 @@ jobs:
     steps:
     - name: diff
       uses: actions/checkout@v4 
-      run: |
-         dir project\main
-         cd project\main
-         fc /B input-address.txt output-address.txt > project\main\DIFF.txt 
-      shell: cmd
+       run: |
+          dir project\main
+          cd project\main
+          fc /B input-address.txt output-address.txt > project\main\DIFF.txt 
+       shell: cmd
