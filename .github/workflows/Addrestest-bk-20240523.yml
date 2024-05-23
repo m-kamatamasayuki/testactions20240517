@@ -67,8 +67,7 @@ jobs:
        path: project\main\output-address.txt
     - name: diff
       uses: actions/checkout@v4 
-       run: |
+      run: |
           dir project\main
           cd project\main
-          fc /B input-address.txt output-address.txt > project\main\DIFF.txt 
-       shell: cmd
+          fc /B input-address.txt output-address.txt > project\main\DIFF.txt  
