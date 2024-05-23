@@ -69,7 +69,7 @@ jobs:
       run: |
          dir project\main
          cd project\main
-           $diff = Compare-Object (input-address.txt) (output-address.txt)
+         diff = Compare-Object (input-address.txt) (output-address.txt)
           if ($diff) {
             Write-Output "There are differences:"
             $diff
