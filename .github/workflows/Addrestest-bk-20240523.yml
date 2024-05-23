@@ -51,7 +51,6 @@ jobs:
       shell: cmd
   job3:
     needs: job2
-    compare_files:
     runs-on: windows-latest
     steps:
     - name: Checkout
