@@ -69,11 +69,5 @@ jobs:
       run: |
          dir project\main
          cd project\main
-         diff = Compare-Object (input-address.txt) (output-address.txt)
-          if ($diff) {
-            Write-Output "There are differences:"
-            $diff
-          } else {
-            Write-Output "No differences found."
-          }
-      shell: powershell
+         fc /c input-address.txt output-address.txt  
+      shell: cmd
