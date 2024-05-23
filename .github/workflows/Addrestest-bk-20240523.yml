@@ -65,7 +65,7 @@ jobs:
       with:
         name: output-address
         path: project\main\output-address.txt  
-    - name: comparison-test
+    - name: diff
       run: |
         dir project\main
         cd project\main
