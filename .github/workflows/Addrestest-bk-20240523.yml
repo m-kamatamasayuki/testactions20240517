@@ -67,7 +67,7 @@ jobs:
         path: project\main\output-address.txt  
     - name: comparison-test
       run: |
-#        dir project\main
-#        cd project\main
-         fc  /N project\main\input-address.txt project\main\output-address.txt > project\main\DIFF.txt 
+        dir project\main
+        cd project\main
+        fc /N project\main\input-address.txt project\main\output-address.txt > project\main\DIFF.txt 
       shell: cmd
