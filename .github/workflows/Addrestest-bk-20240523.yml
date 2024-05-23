@@ -11,7 +11,7 @@ jobs:
          dir project\main
          cd project\main
          g++ -o address2024-test address2024-test.cpp
-         .\address2024-test-in.exe > input-address.txt
+         .\address2024-test.exe > input-address.txt
          type input-address.txt
       shell: cmd
     - name: Upload outline
