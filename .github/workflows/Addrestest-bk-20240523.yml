@@ -49,3 +49,32 @@ jobs:
          cd project\main
          type output-address.txt
       shell: cmd
+  job3:
+    needs: job2
+    compare_files:
+    runs-on: windows-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Download output
+      uses: actions/download-artifact@v4
+      with:
+        name: input-address
+        path: project\main\input-address.txt
+    - name: Download output
+      uses: actions/download-artifact@v4
+      with:
+        name: output-address
+        path: project\main\output-address.txt  
+    - name: comparison-test
+      run: |
+         dir project\main
+         cd project\main
+           $diff = Compare-Object (input-address.txt) (output-address.txt)
+          if ($diff) {
+            Write-Output "There are differences:"
+            $diff
+          } else {
+            Write-Output "No differences found."
+          }
+      shell: powershell
