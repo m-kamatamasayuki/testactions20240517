@@ -51,7 +51,7 @@ jobs:
       shell: cmd
   job3:
     needs: job2
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
     - name: Checkout
       uses: actions/checkout@v4
@@ -69,5 +69,5 @@ jobs:
       run: |
         dir project\main
         cd project\main
-        fc /N input-address.txt output-address.txt > project\main\DIFF.txt 
+        diff /N input-address.txt output-address.txt > project\main\DIFF.txt 
       shell: cmd
