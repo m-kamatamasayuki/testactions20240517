@@ -1,5 +1,5 @@
 name: ADDRESS EXE
-on: [push]  
+on: [main]  
 jobs:
   job1:
     runs-on: ubuntu-latest
