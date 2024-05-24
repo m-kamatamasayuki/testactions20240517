@@ -58,16 +58,13 @@ jobs:
     - name: Download input
       uses: actions/download-artifact@v4
       with:
-       name: input-address
-       path: project\main\input-address.txt
-    - name: Download output
-      uses: actions/download-artifact@v4
-      with:
-       name: output-address
-       path: project\main\output-address.txt
+        name: input-address
+        path: project\main\input-address.txt
+        name: output-address
+        path: project\main\output-address.txt
     - name: Compare two text files
       run: |
         dir project\main
         cd project\main
-        diff project\main\input-address.txt project\main\output-address.txt
+        diff:project\main\input-address.txt project\main\output-address.txt
       shell: cmd
