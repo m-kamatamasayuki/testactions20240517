@@ -60,8 +60,8 @@ jobs:
       with:
         name: input-address
         path: project\main\input-address.txt
-    - name: Upload output
-      uses: actions/upload-artifact@v4
+    - name: Download output
+      uses: actions/download-artifact@v4
       with:
         name: output-address
         path: project\main\output-address.txt
@@ -69,5 +69,5 @@ jobs:
       run: |
         dir project\main
         cd project\main
-        diff project\main\input-address.txt project\main\output-address.txt
+        fc project\main\input-address.txt project\main\output-address.txt
       shell: cmd
