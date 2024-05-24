@@ -68,6 +68,8 @@ jobs:
       run: |
         ls project/main/
         cd project/main/
+        cat output-address.txt
+        cat input-address.txt
         diff input-address.txt output-address.txt
 #          if [ -s diff_output.txt ]; then
 #            echo "Differences found:"
