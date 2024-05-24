@@ -68,7 +68,8 @@ jobs:
       run: |
          ls project/main
          cd project/main   
-         diff -rq project/main/output-address.txt project/main/input-address.txt < textdata.txt
+         diff project/main/output-address.txt/output-address.txt project/main/input-address.txt/input-address.txt > textdata.txt
+         cat textdata.txt
 #        cd project/main/
 #        ls output-address.txt
 #        cat project/main/output-address.txt/output-address.txt
