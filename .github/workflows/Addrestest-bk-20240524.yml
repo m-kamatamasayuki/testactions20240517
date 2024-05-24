@@ -54,16 +54,16 @@ jobs:
     steps:
 #    - name: Checkout
 #      uses: actions/checkout@v4
-    - name: Upload outline
-      uses: actions/upload-artifact@v4
-      with:
-        name: input-address
-        path: project/main/input-address.txt
-    - name: Upload output
-      uses: actions/upload-artifact@v4
-      with:
-        name: output-address
-        path: project/main/output-address.txt  
+#    - name: Upload outline
+#      uses: actions/upload-artifact@v4
+#      with:
+#        name: input-address
+#        path: project/main/input-address.txt
+#    - name: Upload output
+#      uses: actions/upload-artifact@v4
+#      with:
+#        name: output-address
+#        path: project/main/output-address.txt  
     - name: Install diffutils
       run: sudo apt-get install diffutils
     - name: Compare files
