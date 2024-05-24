@@ -12,7 +12,7 @@ jobs:
          g++ -o address2024-test address2024-test.cpp
          ./address2024-test > input-address.txt
          cat input-address.txt
-      shell: cmd
+#      shell: cmd
     - name: Upload outline
       uses: actions/upload-artifact@v4
       with:
@@ -36,7 +36,7 @@ jobs:
          g++ -o address2024test-in address2024test-in.cpp
          ./address2024test-in < input-address.txt > output-address.txt
          cat output-address.txt
-      shell: cmd
+ #     shell: cmd
     - name: Upload output
       uses: actions/upload-artifact@v4
       with:
@@ -47,9 +47,9 @@ jobs:
          ls project/main
          cd project/main
          cat output-address.txt
-      shell: cmd
+  #    shell: cmd
   job3:
-    needs: job2
+    needs:  [job1, job2]
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
