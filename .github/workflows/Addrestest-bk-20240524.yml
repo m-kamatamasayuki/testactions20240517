@@ -63,7 +63,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: output-address
-        path: projectmain/output-address.txt
+        path: project/main/output-address.txt
     - name: Checkout code
       uses: actions/checkout@v4
     - name: Install diffutils
