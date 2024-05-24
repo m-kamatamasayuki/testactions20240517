@@ -1,5 +1,5 @@
 name: ADDRESS EXE
-on: [main]  
+on: [push]  
 jobs:
   job1:
     runs-on: ubuntu-latest
@@ -12,7 +12,7 @@ jobs:
          g++ -o address2024-test address2024-test.cpp
 #         ./address2024-test
 #         cat input-address.txt
-      shell: cmd
+#      shell: cmd
     - name: Upload outline
       uses: actions/upload-artifact@v4
       with:
@@ -36,7 +36,7 @@ jobs:
          g++ -o address2024test-in address2024test-in.cpp
 #         ./address2024test-in input-address.txt
 #         type output-address.txt
-      shell: cmd
+#      shell: cmd
     - name: Upload output
       uses: actions/upload-artifact@v4
       with:
@@ -47,7 +47,7 @@ jobs:
          dir project/main
          cd project/main
          cat output-address.txt
-      shell: cmd
+#      shell: cmd
   job3:
     needs: job2
     runs-on: ubuntu-latest
@@ -69,4 +69,4 @@ jobs:
         dir project/main
         cd project/main
         diff project/main/input-address.txt project/main/output-address.txt
-      shell: cmd
+#      shell: cmd
