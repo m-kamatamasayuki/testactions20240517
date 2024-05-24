@@ -52,23 +52,23 @@ jobs:
     needs: job2
     runs-on: ubuntu-latest
     steps:
-#    - name: Checkout
-#      uses: actions/checkout@v4
-#    - name: Upload outline
-#      uses: actions/upload-artifact@v4
-#      with:
-#        name: input-address
-#        path: project/main/input-address.txt
-#    - name: Upload output
-#      uses: actions/upload-artifact@v4
-#      with:
-#        name: output-address
-#        path: project/main/output-address.txt  
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Upload outline
+      uses: actions/upload-artifact@v4
+      with:
+         name: input-address
+         path: project/main/input-address.txt
+    - name: Download output
+      uses: actions/upload-artifact@v4
+      with:
+        name: output-address
+        path: project/main/output-address.txt  
     - name: Install diffutils
       run: sudo apt-get install diffutils
     - name: Compare files
       run: |
-       df project/main/
+       ls project/main/
        cd project/main/
        ls -l  
        diff -c project/main/input-address.txt project/main/output-address.txt
