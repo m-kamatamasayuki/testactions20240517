@@ -7,32 +7,32 @@ jobs:
     - uses: actions/checkout@v2
     - name: ADDRESS EXE
       run: |
-         dir project/main
-         cd project/main
+         dir project\main
+         cd project\main
          g++ -o address2024-test address2024-test.cpp
          ./address2024-test > input-address.txt
          cat input-address.txt
 #      shell: cmd
     - name: Upload outline
-      uses: actions/upload-artifact@v4
+      uses: actions\upload-artifact@v4
       with:
         name: input-address
-        path: project/main/input-address.txt
+        path: project\main\input-address.txt
   job2:
     needs: job1
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v4
+      uses: actions\checkout@v4
     - name: Download output
-      uses: actions/download-artifact@v4
+      uses: actions\download-artifact@v4
       with:
         name: input-address
         path: project/main/input-address.txt
     - name: Run another C++ code
       run: |
-         ls project/main
-         cd project/main
+         ls project\main
+         cd project\main
          g++ -o address2024test-in address2024test-in.cpp
          ./address2024test-in < input-address.txt > output-address.txt
          cat output-address.txt
@@ -41,11 +41,11 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: output-address
-        path: project/main/output-address.txt
+        path: project\main\output-address.txt
     - name: output-address
       run: |
-         ls project/main
-         cd project/main
+         ls project\main
+         cd project\main
          cat output-address.txt
 #      shell: cmd
   job3:
@@ -53,22 +53,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v4
+      uses: actions\checkout@v4
     - name: Upload outline
-      uses: actions/upload-artifact@v4
+      uses: actions\upload-artifact@v4
       with:
          name: input-address
-         path: project/main/input-address.txt
+         path: project\main\input-address.txt
     - name: Download output
-      uses: actions/upload-artifact@v4
+      uses: actions\upload-artifact@v4
       with:
         name: output-address
-        path: project/main/output-address.txt
+        path: project\main\output-address.txt
     - name: Compare files
       run: |
-        ls project/main/
-        cd project/main/
-        diff -c project/main/input-address.txt project/main/output-address.txt
+        ls project\main\
+        cd project\main\
+        diff -c project\main\input-address.txt project\main\output-address.txt
 #          if [ -s diff_output.txt ]; then
 #            echo "Differences found:"
 #            cat diff_output.txt
