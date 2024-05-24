@@ -64,14 +64,13 @@ jobs:
       with:
         name: output-address
         path: project/main/output-address.txt  
-    - name: Install diffutils
-      run: sudo apt-get install diffutils
     - name: Compare files
       run: |
+       sudo apt-get install diffutils
+       diff -c project/main/input-address.txt project/main/output-address.txt
        ls project/main/
        cd project/main/
-       ls -l  
-       diff -c project/main/input-address.txt project/main/output-address.txt
+       ls -l
 #          if [ -s diff_output.txt ]; then
 #            echo "Differences found:"
 #            cat diff_output.txt
