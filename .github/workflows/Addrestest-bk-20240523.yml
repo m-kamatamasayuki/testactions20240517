@@ -67,12 +67,12 @@ jobs:
        path: project\main\output-address.txt
     - name: Compare two text files
       run: |
-        $file1 = 'project\main\input-address.txt'
-        $file2 = 'project\main\output-address.txt'
-        $diff = diff (Get-Content $file1) (Get-Content $file2)
-        if ($diff) {
+        file1 = 'project\main\input-address.txt'
+        file2 = 'project\main\output-address.txt'
+        diff = diff (Get-Content file1) (Get-Content file2)
+        if (diff) {
             Write-Output "Differences found:"
-            Write-Output $diff
+            Write-Output diff
         } else {
             Write-Output "No differences found."
         }
