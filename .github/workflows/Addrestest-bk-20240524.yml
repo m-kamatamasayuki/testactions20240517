@@ -14,7 +14,7 @@ jobs:
          cat input-address.txt
 #      shell: cmd
     - name: Upload outline
-      uses: actions\upload-artifact@v4
+      uses: actions/upload-artifact@v4
       with:
         name: input-address
         path: project\main\input-address.txt
@@ -23,9 +23,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions\checkout@v4
+      uses: actions/checkout@v4
     - name: Download output
-      uses: actions\download-artifact@v4
+      uses: actions/download-artifact@v4
       with:
         name: input-address
         path: project/main/input-address.txt
@@ -53,14 +53,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions\checkout@v4
+      uses: actions/checkout@v4
     - name: Upload outline
-      uses: actions\upload-artifact@v4
+      uses: actions/upload-artifact@v4
       with:
          name: input-address
          path: project\main\input-address.txt
     - name: Download output
-      uses: actions\upload-artifact@v4
+      uses: actions/upload-artifact@v4
       with:
         name: output-address
         path: project\main\output-address.txt
