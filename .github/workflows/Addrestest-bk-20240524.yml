@@ -64,12 +64,12 @@ jobs:
       with:
         name: output-address
         path: projectmain/output-address.txt
-         - name: Checkout code
-        uses: actions/checkout@v3
-      - name: Install diffutils
-        run: sudo apt-get install diffutils
-      - name: Compare files
-        run: |
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Install diffutils
+      run: sudo apt-get install diffutils
+    - name: Compare files
+      run: |
         dir project/main
         cd project/main
         diff project/main/input-address.txt project/main/output-address.txt > diff_output.txt
