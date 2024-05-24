@@ -54,6 +54,16 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4
+    - name: Download outline
+      uses: actions/upload-artifact@v4
+      with:
+         name: input-address
+         path: project/main/input-address.txt
+    - name: Download output
+      uses: actions/upload-artifact@v4
+      with:
+        name: output-address
+        path: project/main/output-address.txt
     - name: Compare files
       run: |
         ls project/main/
