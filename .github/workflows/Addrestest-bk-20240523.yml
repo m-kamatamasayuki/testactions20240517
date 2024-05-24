@@ -67,9 +67,7 @@ jobs:
        path: project\main\output-address.txt
     - name: Compare two text files
       run: |
-        file1 = 'project\main\input-address.txt'
-        file2 = 'project\main\output-address.txt'
-        diff = ("file1") ("file2")
+        diff project\main\input-address.txt project\main\output-address.txt
         if (diff) {
             Write-Output "Differences found:"
             Write-Output diff
