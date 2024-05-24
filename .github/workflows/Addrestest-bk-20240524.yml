@@ -49,7 +49,7 @@ jobs:
          cat output-address.txt
 #      shell: cmd
   job3:
-    needs: job1
+    needs: job2
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
