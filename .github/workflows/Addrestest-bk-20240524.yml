@@ -10,7 +10,7 @@ jobs:
          dir project\main
          cd project\main
          g++ -o address2024-test address2024-test.cpp
-         ./address2024-test.exe > input-address.txt
+         ./address2024-test > input-address.txt
          cat input-address.txt
       shell: cmd
     - name: Upload outline
@@ -34,7 +34,7 @@ jobs:
          dir project\main
          cd project\main
          g++ -o address2024test-in address2024test-in.cpp
-         ./address2024test-in.exe input-address.txt > output-address.txt
+         ./address2024test-in input-address.txt > output-address.txt
          type output-address.txt
       shell: cmd
     - name: Upload output
