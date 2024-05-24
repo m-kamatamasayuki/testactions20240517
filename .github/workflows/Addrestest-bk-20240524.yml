@@ -70,7 +70,7 @@ jobs:
       run: sudo apt-get install diffutils
     - name: Compare files
       run: |
-        dir project/main
+        ls project/main
         cd project/main
         diff -c project/main/input-address.txt project/main/output-address.txt > diff_output.txt
           if [ -s diff_output.txt ]; then
