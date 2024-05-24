@@ -31,7 +31,7 @@ jobs:
         path: project/main/input-address.txt
     - name: Run another C++ code
       run: |
-         dir project/main
+         ls project/main
          cd project/main
          g++ -o address2024test-in address2024test-in.cpp
          ./address2024test-in < input-address.txt > output-address.txt
@@ -44,7 +44,7 @@ jobs:
         path: project/main/output-address.txt
     - name: output-address
       run: |
-         dir project/main
+         ls project/main
          cd project/main
          cat output-address.txt
 #      shell: cmd
