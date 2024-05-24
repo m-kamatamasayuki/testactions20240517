@@ -69,7 +69,7 @@ jobs:
       run: |
         file1 = 'project\main\input-address.txt'
         file2 = 'project\main\output-address.txt'
-        diff = diff (Get-Content "file1") (Get-Content "file2")
+        diff = (Get-Content "file1") (Get-Content "file2")
         if (diff) {
             Write-Output "Differences found:"
             Write-Output diff
