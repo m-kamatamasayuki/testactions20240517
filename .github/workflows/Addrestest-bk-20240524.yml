@@ -7,7 +7,6 @@ jobs:
     - uses: actions/checkout@v2
     - name: ADDRESS EXE
       run: |
-         msbuild -version
          dir project\main
          cd project\main
          g++ -o address2024-test address2024-test.cpp
