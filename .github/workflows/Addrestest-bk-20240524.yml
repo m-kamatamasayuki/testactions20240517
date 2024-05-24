@@ -64,9 +64,20 @@ jobs:
       with:
         name: output-address
         path: projectmain/output-address.txt
+         - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Install diffutils
+        run: sudo apt-get install diffutils
     - name: Compare two text files
       run: |
+      - name: Compare files
+        run: |
         dir project/main
         cd project/main
-        diff project/main/input-address.txt project/main/output-address.txt
-#      shell: cmd
+        diff project/main/input-address.txt project/main/output-address.txt > diff_output.txt
+          if [ -s diff_output.txt ]; then
+            echo "Differences found:"
+            cat diff_output.txt
+          else
+            echo "No differences found."
+          fi
