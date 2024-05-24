@@ -68,8 +68,6 @@ jobs:
         uses: actions/checkout@v3
       - name: Install diffutils
         run: sudo apt-get install diffutils
-    - name: Compare two text files
-      run: |
       - name: Compare files
         run: |
         dir project/main
