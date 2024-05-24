@@ -68,10 +68,4 @@ jobs:
     - name: Compare two text files
       run: |
         diff project\main\input-address.txt project\main\output-address.txt
-        if (diff) {
-            Write-Output "Differences found:"
-            Write-Output diff
-        } else {
-            Write-Output "No differences found."
-        }
-      shell: pwsh
+      shell: cmd
