@@ -31,8 +31,8 @@ jobs:
         path: project/main/input-address.txt
     - name: Run another C++ code
       run: |
-         dir project\main
-         cd project\main
+         dir project/main
+         cd project/main
          g++ -o address2024test-in address2024test-in.cpp
          ./address2024test-in < input-address.txt > output-address.txt
          cat output-address.txt
@@ -41,7 +41,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: output-address
-        path: project\main\output-address.txt
+        path: project/main/output-address.txt
     - name: output-address
       run: |
          dir project/main
