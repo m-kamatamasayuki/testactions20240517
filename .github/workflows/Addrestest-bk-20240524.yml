@@ -7,8 +7,8 @@ jobs:
     - uses: actions/checkout@v2
     - name: ADDRESS EXE
       run: |
-         dir project\main
-         cd project\main
+         dir project/main
+         cd project/main
          g++ -o address2024-test address2024-test.cpp
 #         ./address2024-test
 #         cat input-address.txt
