@@ -71,7 +71,7 @@ jobs:
         cd project\main
         cd  project\main\input-address.txt\
         dir project\main\input-address.txt\
-        cd project\main\output-address.txt\
-        dir project\main\input-address.txt\
+#        cd project\main\output-address.txt\
+#        dir project\main\input-address.txt\
 #        diff project\main\input-address.txt\input-address.txt project\main\output-address.txt\output-address.txt
       shell: cmd
