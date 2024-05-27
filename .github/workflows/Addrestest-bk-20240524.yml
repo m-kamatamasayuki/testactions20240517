@@ -16,7 +16,7 @@ jobs:
     - name: Upload outline
       uses: actions/upload-artifact@v4
       with:
-        name: input-address.txt
+        name: address.txt
         path: project/main/
   job2:
     needs: job1
@@ -27,8 +27,8 @@ jobs:
     - name: Download output
       uses: actions/download-artifact@v4
       with:
-        name: input-address.txt
-        path: project/main/input-address.txt
+        name: address.txt
+        path: project/main/address.txt
     - name: Run another C++ code
       run: |
          ls project/main
