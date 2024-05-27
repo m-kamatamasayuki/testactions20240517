@@ -10,14 +10,14 @@ jobs:
          dir project/main
          cd project/main
          g++ -o address2024-test address2024-test.cpp
-         ./address2024-test > address.txt
+         ./address2024-test > project/main/address.txt
          cat address.txt
 #      shell: cmd
     - name: Upload outline
       uses: actions/upload-artifact@v4
       with:
         name: address.txt
-        path: project/main/
+        path: project/main/address.txt
   job2:
     needs: job1
     runs-on: ubuntu-latest
@@ -28,20 +28,20 @@ jobs:
       uses: actions/download-artifact@v4
       with:
         name: address.txt
-        path: project/main/
+        path: project/main/address.txt
     - name: Run another C++ code
       run: |
          ls project/main
          cd project/main
          g++ -o address2024test-in address2024test-in.cpp
-         ./address2024test-in < address.txt > output-address.txt
+         ./address2024test-in < address.txt > project/main/output-address.txt
  #       cat output-address.txt
  #     shell: cmd
     - name: Upload output
       uses: actions/upload-artifact@v4
       with:
         name: output-address.txt
-        path: project/main/
+        path: project/main/output-address.txt
     - name: output-address
       run: |
          ls project/main
