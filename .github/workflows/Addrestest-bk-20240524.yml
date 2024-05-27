@@ -10,7 +10,7 @@ jobs:
          dir project/main
          cd project/main
          g++ -o address2024-test address2024-test.cpp
-         ./address2024-test > input-address.txt
+         ./address2024-test > address.txt
          cat input-address.txt
 #      shell: cmd
     - name: Upload outline
@@ -34,7 +34,7 @@ jobs:
          ls project/main
          cd project/main
          g++ -o address2024test-in address2024test-in.cpp
-         ./address2024test-in < input-address.txt > output-address.txt
+         ./address2024test-in < address.txt > output-address.txt
          cat output-address.txt
  #     shell: cmd
     - name: Upload output
@@ -58,7 +58,7 @@ jobs:
       uses: actions/download-artifact@v4
       with:
          name: input-address.txt
-         path: project/main/input-address.txt
+         path: project/main/address.txt
     - name: Download output
       uses: actions/download-artifact@v4
       with:
