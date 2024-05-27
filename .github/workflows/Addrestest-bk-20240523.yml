@@ -67,9 +67,9 @@ jobs:
         path: project\main\output-address.txt
     - name: Compare two text files
       run: |
-        dir project\main
-        cd project\main
-        type  project\main\input-address.txt
+        dir project\main\input-address.txt
+        cd project\main\input-address.txt
+#        type  project\main\input-address.txt
 #        dir project\main\input-address.txt\
 #        cd project\main\output-address.txt\
 #        dir project\main\input-address.txt\
