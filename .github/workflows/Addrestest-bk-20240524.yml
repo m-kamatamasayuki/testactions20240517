@@ -67,8 +67,8 @@ jobs:
     - name: Compare files
       run: |
          ls project/main
-         cat project/main/output-address.txt
-         cat project/main/input-address.txt
+         cat project/main/output-address.txt/output-address.txt
+         cat project/main/input-address.txt/input-address.txt
 #        diff project/main/output-address.txt project/main/input-address.txt
 
 #        cd project/main/
