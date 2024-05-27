@@ -56,7 +56,7 @@ jobs:
     - name: Download outline
       uses: actions/download-artifact@v4
       with:
-         name: input-address.txt
+         name: address.txt
          path: project/main/address.txt
     - name: Download output
       uses: actions/download-artifact@v4
@@ -66,8 +66,8 @@ jobs:
     - name: Compare files
       run: |
          ls project/main
-         cat project/main/output-address.txt/output-address.txt
-         cat project/main/input-address.txt/address.txt
+         cat project/main/output-address.txt
+         cat project/main/address.txt
 #        diff project/main/output-address.txt project/main/input-address.txt
 
 #        cd project/main/
