@@ -44,7 +44,7 @@ jobs:
     - name: output-address
       run: |
          ls project/main
-         cd project/main/output-address.txt
+         cd project/main/
          cat output-address.txt
   #    shell: cmd
   job3:
