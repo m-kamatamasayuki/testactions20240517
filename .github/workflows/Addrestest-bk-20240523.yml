@@ -69,7 +69,9 @@ jobs:
       run: |
         dir project\main
         cd project\main
-        type project\main\input-address.txt\input-address.txt
-        type project\main\output-address.txt\output-address.txt
+        cd  project\main\input-address.txt
+        dir
+        cd project\main\output-address.txt
+        dir
 #        diff project\main\input-address.txt\input-address.txt project\main\output-address.txt\output-address.txt
       shell: cmd
