@@ -82,7 +82,7 @@ jobs:
 #          else
 #            echo "No differences found."
   job4:
-    needs: job3
+    needs:  [job1, job2, job3]
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
@@ -104,11 +104,17 @@ jobs:
       with:
         name: outaddress.txt
         path: project/main/outaddress.txt
+    
     - name: output-address
       run: |
          ls project/main
          cd project/main
          cat outaddress.txt
+    - name: Upload output
+      uses: actions/download-artifact@v4
+      with:
+        name: output-address.txt
+        path: project/main/output-address.txt 
     - name: Compare files
 #      uses: actions/checkout@v4
       run: |
