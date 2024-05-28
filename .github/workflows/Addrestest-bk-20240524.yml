@@ -56,8 +56,8 @@ jobs:
     - name: Download outline
       uses: actions/download-artifact@v4
       with:
-         name: address.txt
-         path: project/main
+         name: out-address.txt
+         path: project/main/
     - name: Download output
       uses: actions/download-artifact@v4
       with:
