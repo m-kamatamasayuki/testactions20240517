@@ -65,7 +65,6 @@ jobs:
     - name: Compare files
       run: |
          ls project/main
-         cd project/main/output-address.txt/ 
          ls -l
          cat output-address.txt
          cat address.txt
