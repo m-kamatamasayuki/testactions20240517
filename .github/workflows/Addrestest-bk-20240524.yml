@@ -109,4 +109,11 @@ jobs:
          ls project/main
          cd project/main
          cat outaddress.txt
+    - name: Compare files
+#      uses: actions/checkout@v4
+      run: |
+         ls project/main
+         ls -l project/main
+         cd project/main
+         diff outaddress.txt output-address.txt
   #    shell: cmd
