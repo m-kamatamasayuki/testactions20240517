@@ -68,7 +68,8 @@ jobs:
          cd project/main/output-address.txt/ 
          ls -l
          cat output-address.txt
-         cat project/main/address.txt
+         cd project/main/address.txt
+         ls -l
 #        diff project/main/output-address.txt project/main/input-address.txt
 
 #        cd project/main/
