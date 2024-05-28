@@ -56,20 +56,19 @@ jobs:
       uses: actions/download-artifact@v4
       with:
          name: address.txt
-         path: project/main/address.txt
+         path: project/main
     - name: Download output
       uses: actions/download-artifact@v4
       with:
         name: output-address.txt
-        path: project/main/output-address.txt
+        path: project/main
     - name: Compare files
       run: |
          ls project/main
          cd project/main/output-address.txt/ 
          ls -l
          cat output-address.txt
-         cd project/main/address.txt
-         ls -l
+         cat address.txt
 #        diff project/main/output-address.txt project/main/input-address.txt
 
 #        cd project/main/
