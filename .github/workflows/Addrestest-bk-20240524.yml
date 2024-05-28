@@ -68,7 +68,7 @@ jobs:
          ls project/main
          ls -l project/main
          cd project/main
-         diff -c out-address.txt output-address.txt
+         diff out-address.txt output-address.txt
 #         mv address.txt ${{ github.txt }}/project/main
 #        cd project/main/
 #        ls output-address.txt
