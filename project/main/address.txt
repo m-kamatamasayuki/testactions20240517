@@ -1,0 +1,4 @@
+Name: 山田 太郎, Address: 東京都新宿区
+Name: 佐藤 次郎, Address: 神奈川県横浜市
+Name: 山田 花子, Address: 神奈川県横浜市
+Name: 佐藤 花子, Address: 神奈川県川崎市
