@@ -10,14 +10,14 @@ jobs:
          dir project/main
          cd project/main
          g++ -o address2024-test address2024-test.cpp
-         ./address2024-test > address.txt
-         cat address.txt
+         ./address2024-test > out-address.txt
+         cat out-address.txt
 #      shell: cmd
     - name: Upload outline
       uses: actions/upload-artifact@v4
       with:
-        name: address.txt
-        path: project/main/address.txt
+        name: out-address.txt
+        path: project/main/out-address.txt
   job2:
     needs: job1
     runs-on: ubuntu-latest
@@ -68,8 +68,8 @@ jobs:
          ls project/main
          ls -l project/main
          cd project/main
-         cat address.txt
-         mv address.txt ${{ github.txt }}/project/main
+         diff -c out-address.txt output-address.txt
+#         mv address.txt ${{ github.txt }}/project/main
 #        cd project/main/
 #        ls output-address.txt
 #        cat project/main/output-address.txt/output-address.txt
