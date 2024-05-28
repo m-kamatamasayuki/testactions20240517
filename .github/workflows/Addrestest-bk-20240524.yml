@@ -35,7 +35,7 @@ jobs:
          cd project/main
          g++ -o address2024test-in address2024test-in.cpp
          ./address2024test-in < address.txt > output-address.txt
-         ls project/main/output-address.txt
+         cat project/main/output-address.txt
  #     shell: cmd
     - name: Upload output
       uses: actions/upload-artifact@v4
@@ -45,7 +45,7 @@ jobs:
     - name: output-address
       run: |
          ls project/main
-         cat project/main/output-address.txt
+         cat project/main/address.txt
   #    shell: cmd
   job3:
     needs:  [job1, job2]
