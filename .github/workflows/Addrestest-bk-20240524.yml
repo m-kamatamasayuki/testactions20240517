@@ -105,11 +105,11 @@ jobs:
         name: outaddress.txt
         path: project/main/
     
-    - name: output-address
-      run: |
-         ls project/main
-         cd project/main
-         cat outaddress.txt
+#    - name: output-address
+#      run: |
+#         ls project/main
+#         cd project/main
+#         cat outaddress.txt
 #    - name: Upload output
 #      uses: actions/download-artifact@v4
 #      with:
@@ -120,5 +120,5 @@ jobs:
       run: |
          ls -l project/main
          cd project/main
-         diff -c outaddress.txt output-address.txt
+         cat outaddress.txt
   #    shell: cmd
