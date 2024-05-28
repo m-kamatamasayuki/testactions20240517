@@ -44,7 +44,7 @@ jobs:
     - name: output-address
       run: |
          ls project/main
-         cat project/main/address.txt
+         cat project/main/output-address.txt
   #    shell: cmd
   job3:
     needs:  [job1, job2]
