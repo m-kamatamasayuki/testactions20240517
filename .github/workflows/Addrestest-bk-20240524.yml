@@ -98,6 +98,7 @@ jobs:
          cd project/main
          g++ -o address2024test-on address2024test-on.cpp
          ./address2024test-on < output-address.txt > outaddress.txt
+         cat outaddress.txt
  #     shell: cmd
     - name: Upload output
       uses: actions/upload-artifact@v4
@@ -110,11 +111,11 @@ jobs:
          ls project/main
          cd project/main
          cat outaddress.txt
-    - name: Upload output
-      uses: actions/download-artifact@v4
-      with:
-        name: output-address.txt
-        path: project/main/ 
+#    - name: Upload output
+#      uses: actions/download-artifact@v4
+#      with:
+#        name: output-address.txt
+#        path: project/main/ 
     - name: Compare files
 #      uses: actions/checkout@v4
       run: |
