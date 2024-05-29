@@ -121,4 +121,5 @@ jobs:
          ls -l project/main
          cd project/main
          cat outaddress.txt
+         diff -c outaddress.txt output-address.txt
   #    shell: cmd
