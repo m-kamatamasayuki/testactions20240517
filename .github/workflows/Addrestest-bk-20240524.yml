@@ -122,5 +122,5 @@ jobs:
          cd project/main
          cat outaddress.txt
          cat output-address.txt/output-address.txt
-#         diff outaddress.txt output-address.txt
+         diff -c outaddress.txt output-address.txt/output-address.txt
   #    shell: cmd
