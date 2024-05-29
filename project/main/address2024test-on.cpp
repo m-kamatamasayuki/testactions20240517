@@ -5,7 +5,7 @@
 
 int main() {
     std::map<std::string, std::string> addressBook;
-    std::ifstream file("*.txt"); // ここにはあなたのファイル名を入力してください
+    std::ifstream file("address.txt"); // ここにはあなたのファイル名を入力してください
 
     if (file.is_open()) {
         std::string line;
