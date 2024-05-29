@@ -98,7 +98,6 @@ jobs:
          cd project/main
          g++ -o address2024test-on address2024test-on.cpp
          ./address2024test-on < output-address.txt > outaddress.txt
-         cat output-address.txt
  #     shell: cmd
     - name: Upload output
       uses: actions/upload-artifact@v4
@@ -122,6 +121,6 @@ jobs:
          ls -l project/main
          cd project/main
          cat outaddress.txt
-         cat output-address.txt
+         ls output-address.txt/
 #         diff outaddress.txt output-address.txt
   #    shell: cmd
