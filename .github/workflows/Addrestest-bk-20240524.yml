@@ -123,4 +123,32 @@ jobs:
          cat outaddress.txt
          cat output-address.txt/output-address.txt
          diff -y outaddress.txt output-address.txt/output-address.txt
-  #    shell: cmd
+#    shell: cmd
+  job5:
+    needs: job4
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+#      uses: actions/checkout@v4
+#    - name: Download output
+#      uses: actions/download-artifact@v4
+#      with:
+#        name: output-address.txt
+#        path: project/main/output-address.txt
+    - name: Run another C++ code
+      run: |
+         ls project/main
+         cd project/main
+         g++ -o Untitled-1 Untitled-1.cpp
+         ./Untitled-1 < test2024.txt > test0530.txt
+ #     shell: cmd
+    - name: Upload output
+      uses: actions/upload-artifact@v4
+      with:
+        name: test0530.txt
+        path: project/main/
+    - name: Compare files
+      run: |
+         ls -l project/main
+         cd project/main
+         cat test0530.txt
