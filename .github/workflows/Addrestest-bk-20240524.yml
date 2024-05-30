@@ -57,7 +57,7 @@ jobs:
       uses: actions/download-artifact@v4
       with:
          name: out-address.txt
-         path: project/main/
+         path: project/main/out-address.txt
     - name: Download output
       uses: actions/download-artifact@v4
       with:
@@ -141,7 +141,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: test0530.txt
-        path: project/main/
+        path: project/main/test0530.txt
     - name: Compare files
       run: |
          ls -l project/main
@@ -164,7 +164,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: test20240530.txt
-        path: project/main/
+        path: project/main/test20240530.txt
     - name: Compare files
       run: |
          ls -l project/main
