@@ -128,7 +128,9 @@ jobs:
     needs: job4
     runs-on: ubuntu-latest
     steps:
-    - name: Run another C++ code
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Unititled
       run: |
          ls -l project/main
          cd project/main
