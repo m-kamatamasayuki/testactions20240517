@@ -130,7 +130,7 @@ jobs:
     steps:
     - name: Run another C++ code
       run: |
-         ls project/main
+         ls -l project/main
          cd project/main
          g++ -o Untitled-1 Untitled-1.cpp
          ./Untitled-1 < test2024.txt > test0530.txt
