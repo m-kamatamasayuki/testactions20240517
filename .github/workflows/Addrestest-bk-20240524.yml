@@ -147,3 +147,26 @@ jobs:
          ls -l project/main
          cd project/main
          cat test0530.txt
+  job6:
+    needs: job5
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Unititled
+      run: |
+         ls -l project/main
+         cd project/main
+         g++ -o test20240516 test20240516.cpp
+         ./test20240516 < test2024.txt > test20240530.txt
+ #     shell: cmd
+    - name: Upload output
+      uses: actions/upload-artifact@v4
+      with:
+        name: test0530.txt
+        path: project/main/
+    - name: Compare files
+      run: |
+         ls -l project/main
+         cd project/main
+         cat test20240530.txt
