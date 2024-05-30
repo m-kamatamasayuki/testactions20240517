@@ -163,7 +163,7 @@ jobs:
     - name: Upload output
       uses: actions/upload-artifact@v4
       with:
-        name: test0530.txt
+        name: test20240530.txt
         path: project/main/
     - name: Compare files
       run: |
