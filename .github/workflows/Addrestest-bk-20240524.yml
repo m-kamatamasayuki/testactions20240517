@@ -128,13 +128,6 @@ jobs:
     needs: job4
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-#      uses: actions/checkout@v4
-#    - name: Download output
-#      uses: actions/download-artifact@v4
-#      with:
-#        name: output-address.txt
-#        path: project/main/output-address.txt
     - name: Run another C++ code
       run: |
          ls project/main
