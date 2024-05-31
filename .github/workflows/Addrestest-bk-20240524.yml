@@ -209,7 +209,7 @@ jobs:
       run: |
          ls -l project/main
          cd project/main
-         cat outaddress.txt
+         cat outaddress.txt/outaddress.txt
          cat outaddress0531.txt/outaddress0531.txt
          diff -y outaddress0531.txt/outaddress0531.txt/outaddress.txt
 #    shell: cmd
