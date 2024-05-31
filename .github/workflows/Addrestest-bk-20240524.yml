@@ -170,3 +170,46 @@ jobs:
          ls -l project/main
          cd project/main
          cat test20240530.txt
+  job7:
+    needs: job4
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Download output
+      uses: actions/download-artifact@v4
+      with:
+        name: outaddress.txt
+        path: project/main/outaddress.txt
+    - name: Run another C++ code
+      run: |
+         ls project/main
+         cd project/main
+         g++ -o address2024test-on address2024test-on.cpp
+         ./address2024test-on < outaddress.txt > outaddress0531.txt
+ #     shell: cmd
+    - name: Upload output
+      uses: actions/upload-artifact@v4
+      with:
+        name: outaddress0531.txt
+        path: project/main/outaddress0531.txt
+    
+#    - name: output-address
+#      run: |
+#         ls project/main
+#         cd project/main
+#         cat outaddress.txt
+#    - name: Upload output
+#      uses: actions/download-artifact@v4
+#      with:
+#        name: output-address.txt
+#        path: project/main/ 
+    - name: Compare files
+#      uses: actions/checkout@v4
+      run: |
+         ls -l project/main
+         cd project/main
+         cat outaddress.txt
+         cat outaddress0531.txt/outaddress0531.txt
+         diff -y outaddress0531.txt/outaddress0531.txt/outaddress.txt
+#    shell: cmd
