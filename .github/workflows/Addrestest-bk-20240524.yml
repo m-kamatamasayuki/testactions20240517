@@ -193,23 +193,11 @@ jobs:
       with:
         name: outaddress0531.txt
         path: project/main/outaddress0531.txt
-    
-#    - name: output-address
-#      run: |
-#         ls project/main
-#         cd project/main
-#         cat outaddress.txt
-#    - name: Upload output
-#      uses: actions/download-artifact@v4
-#      with:
-#        name: output-address.txt
-#        path: project/main/ 
     - name: Compare files
 #      uses: actions/checkout@v4
       run: |
          ls -l project/main
          cd project/main
-         cat outaddress.txt/outaddress.txt
-         cat outaddress0531.txt/outaddress0531.txt
-         diff -y outaddress0531.txt/outaddress0531.txt/outaddress.txt
+         cat outaddress.txt
+         cat outaddress0531.txt
 #    shell: cmd
