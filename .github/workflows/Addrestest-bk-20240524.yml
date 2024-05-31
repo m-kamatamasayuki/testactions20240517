@@ -198,6 +198,6 @@ jobs:
       run: |
          ls -l project/main
          cd project/main
-         cat outaddress.txt
-         cat outaddress0531.txt
+         cat project/main/outaddress.txt/outaddress.txt
+         cat project/main/outaddress0531.txt
 #    shell: cmd
